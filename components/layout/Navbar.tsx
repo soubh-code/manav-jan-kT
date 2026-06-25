@@ -15,11 +15,11 @@ const navItems = [
 
 function Logo() {
   return (
-    <a href="/#home" className="flex min-w-0 items-center gap-3 max-md:gap-2" aria-label="Manav Jan Kalyan Trust home">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-mjkt bg-white max-md:h-10 max-md:w-10">
-        <HandHeart aria-hidden="true" className="h-7 w-7 text-green-mjkt max-md:h-5 max-md:w-5" />
+    <a href="/#home" className="flex min-w-0 items-center gap-3" aria-label="Manav Jan Kalyan Trust home">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-amber-mjkt bg-white max-md:h-11 max-md:w-11">
+        <HandHeart aria-hidden="true" className="h-7 w-7 text-green-mjkt max-md:h-6 max-md:w-6" />
       </span>
-      <span className="font-heading text-lg font-bold leading-tight text-midnight max-md:text-[0.9rem] sm:text-xl">
+      <span className="font-heading text-lg font-bold leading-tight text-midnight max-md:hidden sm:text-xl">
         Manav Jan
         <br />
         Kalyan Trust
@@ -66,7 +66,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 max-md:px-3 max-md:pt-3">
-      <nav className="mx-auto flex h-[72px] w-full max-w-[1720px] items-center justify-between rounded-2xl bg-white px-8 shadow-mjkt max-md:h-16 max-md:rounded-2xl max-md:px-3">
+      <nav className="mx-auto flex h-[72px] w-full max-w-[1720px] items-center justify-between rounded-2xl bg-white px-8 shadow-mjkt max-md:h-[78px] max-md:rounded-2xl max-md:px-3">
         <Logo />
         <div className="hidden items-center gap-12 xl:gap-16 md:flex">
           {navItems.map(([label, href]) => (
@@ -99,12 +99,14 @@ export default function Navbar() {
             <UserPlus className="h-5 w-5" /> Join Us
           </Button>
         </div>
-        <div className="ml-auto mr-2 flex items-center gap-2 md:hidden">
-          <Button href="/donate" variant="donate" className="h-10 min-h-10 rounded-xl px-3 text-[0.72rem]">
-            <Heart className="h-4 w-4" /> Donate
+        <div className="ml-auto mr-2 grid w-[82px] gap-1 md:hidden">
+          <Button href="/donate" variant="donate" className="h-[28px] min-h-[28px] rounded-lg px-2 text-[0.62rem]">
+            <Heart className="h-3 w-3" />
+            <span>Donate</span>
           </Button>
-          <Button href="/#contact" variant="volunteer" className="h-10 min-h-10 rounded-xl px-3 text-[0.72rem]">
-            <Users className="h-4 w-4" /> Volunteer
+          <Button href="/#contact" variant="volunteer" className="h-[28px] min-h-[28px] rounded-lg px-2 text-[0.62rem]">
+            <Users className="h-3 w-3" />
+            <span>Volunteer</span>
           </Button>
         </div>
         <button
