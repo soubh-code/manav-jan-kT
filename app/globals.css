@@ -140,7 +140,7 @@ textarea {
 }
 
 .hero-glass-veil--reveal {
-  animation: hero-glass-reveal 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: hero-glass-reveal 3s linear forwards;
 }
 
 .hero-reveal-ring {
@@ -160,7 +160,7 @@ textarea {
     0 0 78px rgba(239,159,39,0.26),
     inset 0 0 32px rgba(55,138,221,0.12);
   transform: translate(-50%, -50%) scale(0);
-  animation: hero-reveal-ring 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: hero-reveal-ring 3s linear forwards;
 }
 
 @keyframes hero-glass-reveal {
@@ -168,8 +168,8 @@ textarea {
     --hero-reveal-radius: 0%;
   }
 
-  52% {
-    --hero-reveal-radius: 58%;
+  50% {
+    --hero-reveal-radius: 76%;
   }
 
   100% {
@@ -184,7 +184,7 @@ textarea {
   }
 
   68% {
-    opacity: 0.78;
+    opacity: 0.62;
   }
 
   100% {

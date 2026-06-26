@@ -60,30 +60,31 @@ export default function Hero() {
       ) : null}
       {isRevealRunning ? <div className="hero-reveal-ring" aria-hidden="true" /> : null}
       <div className="section-shell flex min-h-[calc(100dvh-5rem)] flex-col justify-between gap-8 pb-4 pt-4 max-md:min-h-0 max-md:gap-6 max-md:pb-7 max-md:pt-8 lg:gap-10">
-        <div className="relative isolate grid items-center gap-8 max-md:gap-3 xl:gap-12 lg:grid-cols-[0.51fr_0.49fr]">
-          <motion.div
-            className="relative z-20"
-            initial={reduceMotion ? false : { opacity: 0, y: 36 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={transition}
-          >
-            <div>
-              <h1 className="display-title max-w-[860px] max-md:text-[clamp(1.95rem,8.2vw,2.75rem)] max-md:leading-[1.05]">
-                <span className="block max-md:whitespace-nowrap lg:whitespace-nowrap">Together, We Build</span>
-                <span className="block h-1 max-md:hidden" aria-hidden="true" />
-                <span className="block max-md:whitespace-nowrap lg:whitespace-nowrap">Stronger Communities</span>
-                <span className="block h-1 max-md:hidden" aria-hidden="true" />
-                <span className="block max-md:whitespace-nowrap lg:whitespace-nowrap">
-                  and <span className="text-amber-mjkt">Brighter Futures.</span>
-                </span>
-              </h1>
-              <div className="pink-rule mt-5 max-md:mt-3 max-md:h-0.5 max-md:w-10" />
-              <p className="mt-5 max-w-[640px] text-[1.04rem] leading-8 text-midnight/80 max-md:mt-3 max-md:text-[0.86rem] max-md:leading-5 xl:max-w-[620px]">
-                Manav Jan Kalyan Trust works across food support, quality education,
-                healthcare, dignity, and community upliftment—empowering people to
-                live with hope and build a better tomorrow.
-              </p>
-            </div>
+        <div className="relative grid items-center gap-8 max-md:gap-3 xl:gap-12 lg:grid-cols-[0.51fr_0.49fr]">
+          <div className="relative">
+            <motion.div
+              initial={reduceMotion ? false : { opacity: 0, y: 36 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={transition}
+            >
+              <div>
+                <h1 className="display-title max-w-[860px] max-md:text-[clamp(1.95rem,8.2vw,2.75rem)] max-md:leading-[1.05]">
+                  <span className="block max-md:whitespace-nowrap lg:whitespace-nowrap">Together, We Build</span>
+                  <span className="block h-1 max-md:hidden" aria-hidden="true" />
+                  <span className="block max-md:whitespace-nowrap lg:whitespace-nowrap">Stronger Communities</span>
+                  <span className="block h-1 max-md:hidden" aria-hidden="true" />
+                  <span className="block max-md:whitespace-nowrap lg:whitespace-nowrap">
+                    and <span className="text-amber-mjkt">Brighter Futures.</span>
+                  </span>
+                </h1>
+                <div className="pink-rule mt-5 max-md:mt-3 max-md:h-0.5 max-md:w-10" />
+                <p className="mt-5 max-w-[640px] text-[1.04rem] leading-8 text-midnight/80 max-md:mt-3 max-md:text-[0.86rem] max-md:leading-5 xl:max-w-[620px]">
+                  Manav Jan Kalyan Trust works across food support, quality education,
+                  healthcare, dignity, and community upliftment—empowering people to
+                  live with hope and build a better tomorrow.
+                </p>
+              </div>
+            </motion.div>
             <button
               type="button"
               onClick={revealHeroColor}
@@ -105,7 +106,7 @@ export default function Hero() {
                 <Eye className="h-4 w-4" /> View Projects
               </Button>
             </div>
-          </motion.div>
+          </div>
           <motion.div
             className="relative z-10 min-h-[360px] overflow-visible max-md:-my-1 max-md:min-h-[300px] sm:max-md:min-h-[350px] lg:min-h-[470px] xl:min-h-[560px] 2xl:min-h-[610px]"
             initial={reduceMotion ? false : { opacity: 0, y: 36 }}
@@ -135,7 +136,7 @@ export default function Hero() {
               />
             </div>
           </motion.div>
-          <div className="relative z-20 grid gap-3 md:hidden">
+          <div className="relative grid gap-3 md:hidden">
             <button
               type="button"
               onClick={revealHeroColor}

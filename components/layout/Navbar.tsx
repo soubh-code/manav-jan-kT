@@ -100,14 +100,14 @@ export default function Navbar() {
             <UserPlus className="h-5 w-5" /> Join Us
           </Button>
         </div>
-        <div className="fixed right-[74px] top-[22px] z-[80] grid w-[76px] gap-1 md:hidden">
-          <Button href="/donate" variant="donate" className="h-[26px] w-full !min-h-[26px] min-w-0 overflow-hidden rounded-lg px-1.5 text-[0.54rem]">
-            <Heart className="h-2.5 w-2.5 shrink-0" />
-            <span className="truncate">Donate</span>
+        <div className="fixed right-[74px] top-[22px] z-[80] grid w-[116px] gap-1 md:hidden">
+          <Button href="/donate" variant="donate" className="h-[26px] w-full !min-h-[26px] min-w-0 overflow-hidden rounded-lg px-2 text-[0.62rem]">
+            <Heart className="h-3 w-3 shrink-0" />
+            <span className="whitespace-nowrap">Donate</span>
           </Button>
-          <Button href="/#contact" variant="volunteer" className="h-[26px] w-full !min-h-[26px] min-w-0 overflow-hidden rounded-lg px-1.5 text-[0.54rem]">
-            <Users className="h-2.5 w-2.5 shrink-0" />
-            <span className="truncate">Volunteer</span>
+          <Button href="/#contact" variant="volunteer" className="h-[26px] w-full !min-h-[26px] min-w-0 overflow-hidden rounded-lg px-2 text-[0.62rem]">
+            <Users className="h-3 w-3 shrink-0" />
+            <span className="whitespace-nowrap">Volunteer</span>
           </Button>
         </div>
         <div className="fixed right-[18px] top-[30px] z-[85] flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-midnight md:hidden">
