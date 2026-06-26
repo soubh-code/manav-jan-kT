@@ -2,8 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { HandHeart, Heart, Menu, UserPlus, Users, X } from "lucide-react";
+import { HandHeart, Heart, UserPlus, Users } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { MenuToggle } from "@/components/ui/menu-toggle";
 
 const navItems = [
   ["Home", "/#home"],
@@ -65,8 +66,8 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 max-md:px-3 max-md:pt-3">
-      <nav className="mx-auto flex h-[72px] w-full max-w-[1720px] items-center justify-between rounded-2xl bg-white px-8 shadow-mjkt max-md:h-[78px] max-md:rounded-2xl max-md:px-3">
+    <header className="fixed left-0 right-0 top-0 z-[70] px-6 pt-4 max-md:px-3 max-md:pt-3">
+      <nav className="relative mx-auto flex h-[72px] w-full max-w-[1720px] items-center justify-between rounded-2xl bg-white px-8 shadow-mjkt max-md:h-[76px] max-md:rounded-2xl max-md:px-3">
         <Logo />
         <div className="hidden items-center gap-12 xl:gap-16 md:flex">
           {navItems.map(([label, href]) => (
@@ -99,44 +100,28 @@ export default function Navbar() {
             <UserPlus className="h-5 w-5" /> Join Us
           </Button>
         </div>
-        <div className="ml-auto mr-2 grid w-[82px] gap-1 md:hidden">
-          <Button href="/donate" variant="donate" className="h-[28px] min-h-[28px] rounded-lg px-2 text-[0.62rem]">
-            <Heart className="h-3 w-3" />
-            <span>Donate</span>
+        <div className="fixed right-[74px] top-[22px] z-[80] grid w-[76px] gap-1 md:hidden">
+          <Button href="/donate" variant="donate" className="h-[26px] w-full !min-h-[26px] min-w-0 overflow-hidden rounded-lg px-1.5 text-[0.54rem]">
+            <Heart className="h-2.5 w-2.5 shrink-0" />
+            <span className="truncate">Donate</span>
           </Button>
-          <Button href="/#contact" variant="volunteer" className="h-[28px] min-h-[28px] rounded-lg px-2 text-[0.62rem]">
-            <Users className="h-3 w-3" />
-            <span>Volunteer</span>
+          <Button href="/#contact" variant="volunteer" className="h-[26px] w-full !min-h-[26px] min-w-0 overflow-hidden rounded-lg px-1.5 text-[0.54rem]">
+            <Users className="h-2.5 w-2.5 shrink-0" />
+            <span className="truncate">Volunteer</span>
           </Button>
         </div>
-        <button
-          type="button"
-          aria-label="Open menu"
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-midnight md:hidden"
-          onClick={() => setOpen(true)}
-        >
-          <Menu className="h-8 w-8" />
-        </button>
+        <div className="fixed right-[18px] top-[30px] z-[85] flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-midnight md:hidden">
+          <MenuToggle strokeWidth={3} open={open} onOpenChange={setOpen} className="h-8 w-8" />
+        </div>
       </nav>
       <div
-        className={`fixed inset-0 z-50 bg-midnight/40 transition-opacity md:hidden ${open ? "opacity-100" : "pointer-events-none opacity-0"}`}
+        className={`fixed inset-0 z-[55] bg-midnight/40 transition-opacity md:hidden ${open ? "opacity-100" : "pointer-events-none opacity-0"}`}
         onClick={() => setOpen(false)}
       />
       <aside
-        className={`fixed bottom-0 right-0 top-0 z-50 flex w-[86vw] max-w-sm flex-col bg-white p-6 shadow-glow transition-transform duration-300 md:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed bottom-0 right-0 top-[92px] z-[60] flex w-[86vw] max-w-sm flex-col rounded-l-[28px] bg-white px-6 pb-6 pt-8 shadow-glow transition-transform duration-500 ease-out md:hidden ${open ? "translate-x-0" : "translate-x-full"}`}
       >
-        <div className="flex items-center justify-between">
-          <Logo />
-          <button
-            type="button"
-            aria-label="Close menu"
-            className="flex h-11 w-11 items-center justify-center rounded-full text-midnight"
-            onClick={() => setOpen(false)}
-          >
-            <X className="h-6 w-6" />
-          </button>
-        </div>
-        <div className="mt-12 grid gap-5">
+        <div className="grid gap-5">
           {navItems.map(([label, href]) => (
             <a
               key={label}

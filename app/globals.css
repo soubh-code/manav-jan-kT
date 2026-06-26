@@ -100,6 +100,99 @@ textarea {
     #F7F4EF;
 }
 
+.hero-muted-bg {
+  background:
+    radial-gradient(circle at 8% 30%, rgba(90,90,90,0.12), transparent 26%),
+    radial-gradient(circle at 95% 36%, rgba(70,70,70,0.1), transparent 24%),
+    radial-gradient(circle at 50% 88%, rgba(95,95,95,0.14), transparent 34%),
+    #F7F4EF;
+}
+
+@property --hero-reveal-radius {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.hero-glass-veil {
+  --hero-reveal-radius: 0%;
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.2), rgba(255,255,255,0.06) 34%, rgba(247,244,239,0.34)),
+    rgba(247,244,239,0.1);
+  -webkit-backdrop-filter: grayscale(1) saturate(0) contrast(1.08);
+  backdrop-filter: grayscale(1) saturate(0) contrast(1.08);
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 50%,
+    transparent 0 calc(var(--hero-reveal-radius) - 2%),
+    rgba(0,0,0,0.36) var(--hero-reveal-radius),
+    #000 calc(var(--hero-reveal-radius) + 8%)
+  );
+  mask-image: radial-gradient(
+    circle at 50% 50%,
+    transparent 0 calc(var(--hero-reveal-radius) - 2%),
+    rgba(0,0,0,0.36) var(--hero-reveal-radius),
+    #000 calc(var(--hero-reveal-radius) + 8%)
+  );
+}
+
+.hero-glass-veil--reveal {
+  animation: hero-glass-reveal 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-reveal-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 40;
+  width: 6vmax;
+  aspect-ratio: 1;
+  pointer-events: none;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.74);
+  background:
+    radial-gradient(circle, transparent 58%, rgba(255,255,255,0.64) 62%, rgba(239,159,39,0.26) 70%, transparent 76%);
+  box-shadow:
+    0 0 34px rgba(255,255,255,0.7),
+    0 0 78px rgba(239,159,39,0.26),
+    inset 0 0 32px rgba(55,138,221,0.12);
+  transform: translate(-50%, -50%) scale(0);
+  animation: hero-reveal-ring 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes hero-glass-reveal {
+  0% {
+    --hero-reveal-radius: 0%;
+  }
+
+  52% {
+    --hero-reveal-radius: 58%;
+  }
+
+  100% {
+    --hero-reveal-radius: 152%;
+  }
+}
+
+@keyframes hero-reveal-ring {
+  0% {
+    opacity: 0.92;
+    transform: translate(-50%, -50%) scale(0.08);
+  }
+
+  68% {
+    opacity: 0.78;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(42);
+  }
+}
+
 .aurora {
   background:
     radial-gradient(circle at 50% 50%, rgba(255,255,255,0.95) 0 18%, transparent 19%),
