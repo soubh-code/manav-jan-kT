@@ -136,8 +136,8 @@ const projectColors: Record<
     text: "text-pink-mjkt",
     overlay: "bg-pink-mjkt",
     overlaySoft: "bg-pink-light/30",
-    onAccentText: "md:group-hover:text-white",
-    onAccentMuted: "md:group-hover:text-white/82",
+    onAccentText: "md:group-hover:text-midnight",
+    onAccentMuted: "md:group-hover:text-midnight/75",
     hoverPanel: "md:group-hover:border-white/20 md:group-hover:bg-white/12",
     hoverField: "md:group-hover:border-white/18 md:group-hover:bg-white/12",
     hoverInput:
@@ -153,8 +153,8 @@ const projectColors: Record<
     text: "text-blue-mjkt",
     overlay: "bg-blue-mjkt",
     overlaySoft: "bg-blue-light/30",
-    onAccentText: "md:group-hover:text-white",
-    onAccentMuted: "md:group-hover:text-white/82",
+    onAccentText: "md:group-hover:text-midnight",
+    onAccentMuted: "md:group-hover:text-midnight/75",
     hoverPanel: "md:group-hover:border-white/20 md:group-hover:bg-white/12",
     hoverField: "md:group-hover:border-white/18 md:group-hover:bg-white/12",
     hoverInput:
@@ -187,8 +187,8 @@ const projectColors: Record<
     text: "text-green-mjkt",
     overlay: "bg-green-mjkt",
     overlaySoft: "bg-green-light/30",
-    onAccentText: "md:group-hover:text-white",
-    onAccentMuted: "md:group-hover:text-white/82",
+    onAccentText: "md:group-hover:text-midnight",
+    onAccentMuted: "md:group-hover:text-midnight/75",
     hoverPanel: "md:group-hover:border-white/20 md:group-hover:bg-white/12",
     hoverField: "md:group-hover:border-white/18 md:group-hover:bg-white/12",
     hoverInput:
@@ -292,7 +292,7 @@ function DonateCardBody({
                 mobile ? "grid grid-cols-[72px_1fr] items-center gap-3 py-4" : "max-md:grid max-md:grid-cols-[72px_1fr] max-md:items-center max-md:gap-3 max-md:py-4"
               } ${
                 amount === value
-                  ? `${color.badge} border-transparent shadow-mjkt ${project.color === "amber" ? "md:group-hover:border-midnight/12 md:group-hover:bg-white/40 md:group-hover:text-midnight" : "md:group-hover:border-white/25 md:group-hover:bg-white/18 md:group-hover:text-white"}`
+                  ? `${color.badge} border-transparent shadow-mjkt ${project.color === "amber" ? "md:group-hover:border-midnight/12 md:group-hover:bg-white/40 md:group-hover:text-midnight" : "md:group-hover:border-white/25 md:group-hover:bg-white/18"}`
                   : `border-graylight ${color.soft} text-midnight ${color.hoverField} ${color.onAccentText}`
               }`}
             >
@@ -351,7 +351,7 @@ function DonateCardBody({
                 onClick={() => setFrequency(value as DonationFrequency)}
                 className={`rounded-2xl border px-4 py-3 font-heading text-sm font-semibold transition-all duration-500 max-md:rounded-none max-md:border-0 max-md:py-4 ${
                   frequency === value
-                    ? `${color.badge} border-transparent ${project.color === "amber" ? "md:group-hover:border-midnight/12 md:group-hover:bg-white/40 md:group-hover:text-midnight" : "md:group-hover:border-white/25 md:group-hover:bg-white/18 md:group-hover:text-white"}`
+                    ? `${color.badge} border-transparent ${project.color === "amber" ? "md:group-hover:border-midnight/12 md:group-hover:bg-white/40 md:group-hover:text-midnight" : "md:group-hover:border-white/25 md:group-hover:bg-white/18"}`
                     : `border-graylight text-midnight ${color.hoverField} ${color.onAccentText}`
                 }`}
               >

@@ -247,13 +247,6 @@ textarea {
     line-height: 1.1;
   }
 
-  .mobile-orbit-detail {
-    display: -webkit-box;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-  }
-
   .mobile-info-detail {
     display: -webkit-box;
     overflow: hidden;

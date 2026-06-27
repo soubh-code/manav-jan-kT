@@ -266,21 +266,20 @@ function MobileOrbitCard({
       aria-label={`Show ${card.title}`}
       aria-pressed={active}
       onClick={onSelect}
-      className={`absolute left-1/2 top-1/2 z-30 w-[126px] overflow-hidden rounded-2xl border bg-white p-2.5 text-left shadow-mjkt transition-[box-shadow,border-color,background-color] duration-300 ${active ? `${color.border} ${color.ring}` : "border-white/90"}`}
+      className={`absolute left-1/2 top-1/2 z-30 w-[132px] overflow-hidden rounded-2xl border bg-white p-2 text-left shadow-mjkt transition-[box-shadow,border-color,background-color] duration-300 ${active ? `${color.border} ${color.ring}` : "border-white/90"}`}
       style={{
         transform: `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${active ? 1.03 : 0.94})`,
         zIndex: active ? 40 : 30
       }}
     >
-      <span className="flex items-center gap-2">
-        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white ${color.bg}`}>
-          <Icon className="h-[18px] w-[18px]" />
+      <span className="flex items-center gap-1.5">
+        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white ${color.bg}`}>
+          <Icon className="h-4 w-4" />
         </span>
-        <span className="min-w-0 break-words font-heading text-[0.74rem] font-bold leading-[0.9rem] text-midnight">
+        <span className="min-w-0 whitespace-normal font-heading text-[clamp(0.56rem,2.15vw,0.7rem)] font-bold leading-[0.82rem] text-midnight [overflow-wrap:normal] [word-break:normal]">
           {card.title.replace(" for Every Child", "")}
         </span>
       </span>
-      <span className="mobile-orbit-detail mt-1.5 block text-[0.6rem] leading-3 text-midnight/70">{card.orbitText}</span>
     </button>
   );
 }
@@ -368,15 +367,19 @@ export default function Projects() {
           <div className="aurora relative mx-auto min-h-[720px] w-full max-w-[760px] overflow-visible rounded-full max-md:-mx-4 max-md:h-[430px] max-md:min-h-0 max-md:w-[calc(100%+2rem)] max-md:max-w-none max-md:rounded-none max-md:bg-transparent">
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-amber-mjkt/45 max-md:h-[320px] max-md:w-[320px]" />
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-pink-mjkt/35 max-md:h-[230px] max-md:w-[230px]" />
-            <div className="relative z-20 mx-auto flex h-48 w-48 flex-col items-center justify-center rounded-full border-8 border-white bg-white text-center shadow-glow max-md:absolute max-md:left-1/2 max-md:top-1/2 max-md:h-32 max-md:w-32 max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:border-[6px] md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-              <Users className="h-8 w-8 text-pink-mjkt" />
-              <h3 className="mt-1 font-heading text-3xl font-bold leading-none text-midnight max-md:text-2xl">
-                Our
-                <br />
-                Projects
-              </h3>
-              <div className="pink-rule mt-2 h-0.5 w-7" />
-              <p className="mt-1 text-sm text-midnight/80 max-md:text-xs">Impact Areas</p>
+            <div className="relative z-20 mx-auto h-60 w-60 rounded-full border-8 border-white bg-white text-center shadow-glow max-md:absolute max-md:left-1/2 max-md:top-1/2 max-md:h-32 max-md:w-32 max-md:-translate-x-1/2 max-md:-translate-y-1/2 max-md:border-[6px] md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+              <div className="absolute left-1/2 top-1/2 flex w-[132px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center max-md:w-[94px]">
+                <Users className="h-8 w-8 shrink-0 text-pink-mjkt max-md:h-6 max-md:w-6" />
+                <h3 className="mt-1 w-full text-center font-heading text-[1.45rem] font-bold leading-[1.02] text-midnight max-md:text-[0.98rem]">
+                  Our
+                  <br />
+                  Projects
+                </h3>
+                <div className="pink-rule mt-1.5 h-0.5 w-6" />
+                <p className="mt-1 w-full text-center text-[0.72rem] leading-4 text-midnight/80 max-md:text-[0.58rem] max-md:leading-3">
+                  Impact Areas
+                </p>
+              </div>
             </div>
             <div className="hidden md:block">
               {orbitItems.map(({ card, angle }, index) => (

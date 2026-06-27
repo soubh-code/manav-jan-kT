@@ -255,19 +255,18 @@ function MobileOrbitCard({
       aria-label={`Show ${card.title}`}
       aria-pressed={active}
       onClick={onSelect}
-      className={`absolute left-1/2 top-1/2 z-30 w-[126px] overflow-hidden rounded-2xl border bg-white p-2.5 text-left shadow-mjkt transition-[box-shadow,border-color,background-color] duration-300 ${active ? `${color.border} ${color.ring}` : "border-white/90"}`}
+      className={`absolute left-1/2 top-1/2 z-30 w-[132px] overflow-hidden rounded-2xl border bg-white p-2 text-left shadow-mjkt transition-[box-shadow,border-color,background-color] duration-300 ${active ? `${color.border} ${color.ring}` : "border-white/90"}`}
       style={{
         transform: `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${active ? 1.03 : 0.94})`,
         zIndex: active ? 40 : 30
       }}
     >
-      <span className="flex items-center gap-2">
-        <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white ${color.bg}`}>
-          <Icon className="h-[18px] w-[18px]" />
+      <span className="flex items-center gap-1.5">
+        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white ${color.bg}`}>
+          <Icon className="h-4 w-4" />
         </span>
-        <span className="min-w-0 break-words font-heading text-[0.74rem] font-bold leading-[0.9rem] text-midnight">{card.title}</span>
+        <span className="min-w-0 whitespace-normal font-heading text-[clamp(0.56rem,2.15vw,0.7rem)] font-bold leading-[0.82rem] text-midnight [overflow-wrap:normal] [word-break:normal]">{card.title}</span>
       </span>
-      <span className="mobile-orbit-detail mt-1.5 block text-[0.6rem] leading-3 text-midnight/70">{card.text}</span>
     </button>
   );
 }
